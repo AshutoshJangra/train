@@ -1,0 +1,80 @@
+* {
+	font-family: "Montserrat", Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.showcase {
+	background-color: #00ff7f;
+}
+
+.header {
+	background: white;
+	display: flex;
+	justify-content: space-between;
+}
+
+.logo {
+	color: green;
+	margin: 10px 20px;
+	font-size: 0.9em;
+}
+
+span {
+	color: #676;
+}
+
+.menu{
+	margin: 10px 20px;
+}
+
+.search-showcase {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 10px 0;
+}
+
+.headline {
+	color: #676;
+	font-size: 1.3em;
+	margin: 20px;
+}
+.source-station,
+.destination-station,
+.search-primary {
+	height: 35px;
+	border: none;
+	width: 300px;
+	margin: 15px 10px;
+	padding: 0 10px;
+	background: #fffafa;
+	font-size: 0.9em;
+	border-radius: 5px;
+}
+
+.search-primary {
+	background: #3cb371;
+	color: white;
+	width: 320px;
+	margin-bottom: 7vh;
+	text-transform: uppercase;;
+}
+
+.tab {
+	display: flex;
+	color: #676;
+	justify-content: center;
+}
+
+.station-name-tab , .change-link {
+	font-size: 0.8em;
+	letter-spacing: 2px;
+	margin: 10px;
+	text-decoration: none;
+}
+
+.station-name-tab .station-name {
+	color: green;
+}
+
