@@ -33,12 +33,14 @@
 					<h2 class="headline">Find your perfect train</h2>
 					<input type="text" class="source-station" placeholder="Source Station">
 					<input type="text" class="destination-station" placeholder="Destination Station">
-					<button class="search-primary">search</button>
+					<input type="date" class="date-picker" placeholder="date">
+					<button class="search-btn">search</button>
 				</div>
               	<!-- end of search showcase area -->
 			</div>
-
-			<!-- Tab area -->
+          
+          <div class="container">
+          	<!-- Tab area -->
 			<div class="tab">
 				<h2 class="station-name-tab">Trains at <span class="station-name">Panipat jnc.</span></h2>
 				<a href="#" class="change-link">change</a>
@@ -47,10 +49,43 @@
 
             <!-- train show area -->
             <div class="display-trains" id="trains">
-            	<div class="display-train-box">
-            		
+
+			<!-- search train template -->   
+               	<!-- <div class="display-train-box">
+            		<div class="name__dep-time">
+            			<h2 class="train-name">%Train-Name%</h2>
+            			<h2 class="depTime"><span class="keyword">Departure</span>%6:45%</h2>
+            			
+            		</div>
+            		<div class="number__arr-time">
+            			<h3 class="train-number">%12345%</h3>
+            			<h2 class="arrTime"><span class="keyword">Arrival</span>%7:55%</h2>
+            		</div>
+            		<div class="src__dest-name">
+            			<h1 class="srcName"><span class="keyword">From</span>%src-Station%</h1>
+            			<h1 class="destName"><span class="keyword">To</span>%dest-name%</h1>
+            		</div>
+            	</div> -->
+
+            <!-- initial train template -->
+                <!-- <div class="display-train-box">
+            		<div class="name__dep-time">
+            			<h2 class="train-name">%Train-Name%</h2>
+            			<h2 class="depTime"><span class="keyword">Departure</span>%6:45%</h2>
+            			
+            		</div>
+            		<div class="number__arr-time">
+            			<h3 class="train-number">%12345%</h3>
+            			<h2 class="arrTime"><span class="keyword">Arrival</span>%7:55%</h2>
+            		</div>
+            		<div class="delay-time">
+            			<h1 class="delay"><span class="keyword">Delay</span>%delay%</h1>
+            		</div>
             	</div>
-            </div>
+ -->            </div>
+          </div>
+			
 		</div>
 	</body>
+	<script src="app.js"></script>
 </html>
