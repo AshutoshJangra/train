@@ -700,14 +700,16 @@ var TrainController = (function() {
 
 
     const getCode=(source)=>{
+    	const proxy = 'https://cors-anywhere.herokuapp.com/';
     	
-      fetch(`https://api.railwayapi.com/v2/name-to-code/station/${source}/apikey/foho9twvto/`)
+      fetch(`${proxy}https://api.railwayapi.com/v2/name-to-code/station/${source}/apikey/foho9twvto/`)
       	.then(resp => resp.json())
       	.then(res => console.log(res));
     }
 
     const getInitialData = (stnName) => {
-    	fetch(`https://api.railwayapi.com/v2/arrivals/station/${stnName}/hours/3/apikey/foho9twvto/`)
+    	const proxy = 'https://cors-anywhere.herokuapp.com/';
+    	fetch(`${proxy}https://api.railwayapi.com/v2/arrivals/station/${stnName}/hours/3/apikey/foho9twvto/`)
     		.then(resp => resp.json())
     		.then(res => data = res.trains);
     }
@@ -722,14 +724,16 @@ var TrainController = (function() {
 			    // getCode(dest);
 
 			// get trains using station code
-			const result = await fetch(`https://api.railwayapi.com/v2/between/source/${source}/dest/${dest}/date/06-07-2019/apikey/foho9twvto/`);
+			const proxy = 'https://cors-anywhere.herokuapp.com/';
+
+			const result = await fetch(`${proxy}https://api.railwayapi.com/v2/between/source/${source}/dest/${dest}/date/06-07-2019/apikey/foho9twvto/`);
 			const resp = await result.json();
 			data = resp.trains ;
 		},
 
 		getInitialTrains : async (stnName) => {
 			//temperory variable bcoz getcode api is broken
-           stnName = 'pnp';
+           stnName = 'ndls';
 
             //const result = await getInitialData(stnName);
            const result = await fetch(`https://api.railwayapi.com/v2/arrivals/station/${stnName}/hours/3/apikey/foho9twvto/`);
@@ -791,9 +795,10 @@ var GlobalController = (function(trainCtrl, uiCtrl) {
 		// send a api request to railway api to get the trains and display by looping to array
 				 // trainCtrl.getTrain(inputs)
 				 // .then(()=> trainCtrl.getData())
-				 // .then(data => data.forEach(curr => uiCtrl.displayTrains(curr)));
+				 // .then(data => data.forEach(curr => uiCtrl.displayTrains(curr , 'template1')));
 		          
-		(trainCtrl.getData()).forEach(curr => uiCtrl.displayTrains(curr , 'template1'));
+		console.log("search dh");
+		trainCtrl.getData().forEach(curr => uiCtrl.displayTrains(curr , 'template1'));
 		
 	};
 
@@ -804,6 +809,7 @@ var GlobalController = (function(trainCtrl, uiCtrl) {
 		 .then(()=> trainCtrl.getData())
 		 .then(data => data.forEach(curr => uiCtrl.displayTrains(curr , 'template2')));
         // display on ui
+        console.log("initial");
 	}
 
 	return {
@@ -819,7 +825,7 @@ var GlobalController = (function(trainCtrl, uiCtrl) {
 			});
 
 			//run initial train handler for trains in 3 hours of interval at a station
-			initialTrainHandler();
+			//initialTrainHandler();
 		}
 	}
 

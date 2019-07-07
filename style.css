@@ -8,9 +8,9 @@
 
 /* Showcases Classes */
 .showcase {
-	background:linear-gradient(to bottom right,	#4169E1,#00BFFF);
-}
+	background:linear-gradient(to bottom right,	#0162a7,#4169E1);
 
+}
 .header {
 	
 	display: flex;
